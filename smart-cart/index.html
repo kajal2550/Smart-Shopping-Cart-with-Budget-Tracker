@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Shopping Cart with Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="nav-logo"><span class="logo-icon">🛒</span> <span class="logo-text">SmartShop</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#categories" onclick="showSection('categories')">Categories</a></li>
+                    <li><a href="#deals" onclick="showSection('deals')">Deals</a></li>
+                    <li><a href="#new" onclick="showSection('new')">New Arrivals</a></li>
+                    <li><a href="#about" onclick="showSection('about')">About</a></li>
+                </ul>
+            </div>
+            <div class="nav-center">
+                <input class="nav-search" type="text" placeholder="Search products...">
+            </div>
+            <div class="nav-right">
+                <span class="nav-icon"><i class="fa fa-heart"></i></span>
+                <span class="nav-icon"><i class="fa fa-shopping-cart"></i><span class="cart-badge">3</span></span>
+                <span class="nav-icon"><i class="fa fa-user"></i></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="hero-badge">⭐ Smart Shopping Made Easy</span>
+                <h1>Discover Amazing <span class="hero-highlight">Products</span> at Great Prices</h1>
+                <p>Shop smarter with AI-powered recommendations, exclusive deals, and a seamless shopping experience. Find exactly what you need, when you need it.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary">Start Shopping</button>
+                    <button class="btn btn-outline">Browse Categories</button>
+                </div>
+                <div class="hero-stats">
+                    <div><b>10K+</b><br>Products</div>
+                    <div><b>50K+</b><br>Happy Customers</div>
+                    <div><b>99%</b><br>Satisfaction</div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="data:image/jpeg;base64,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" alt="Shopping Hero">
+            </div>
+        </section>
+        <section class="categories-section">
+            <h2>Shop by Category</h2>
+            <div class="category-cards">
+                <div class="category-card electronics"> <i class="fa fa-mobile"></i> Electronics <span>1250 items</span></div>
+                <div class="category-card fashion"> <i class="fa fa-tshirt"></i> Fashion <span>2840 items</span></div>
+                <div class="category-card home"> <i class="fa fa-home"></i> Home & Living <span>980 items</span></div>
+                <div class="category-card sports"> <i class="fa fa-futbol"></i> Sports <span>670 items</span></div>
+                <div class="category-card beauty"> <i class="fa fa-magic"></i> Beauty <span>1540 items</span></div>
+            </div>
+        </section>
+        <section class="featured-section">
+            <h2>Featured Products</h2>
+            <div class="featured-products">
+                <!-- Product cards will be rendered here by JS -->
+            </div>
+        </section>
+        <section class="info-section">
+            <div class="info-card"><i class="fa fa-bolt"></i> <b>Fast Delivery</b><br><span>Get your products delivered within 2-3 business days</span></div>
+            <div class="info-card"><i class="fa fa-shield-alt"></i> <b>Quality Guaranteed</b><br><span>100% authentic products with quality assurance</span></div>
+            <div class="info-card"><i class="fa fa-tags"></i> <b>Best Prices</b><br><span>Competitive prices with exclusive deals and discounts</span></div>
+        </section>
+        <section class="cta-section">
+            <h2>Ready to Start Shopping?</h2>
+            <p>Join thousands of happy customers and discover amazing deals today</p>
+            <button class="btn btn-primary">Browse Products</button>
+            <button class="btn btn-outline"> </button>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="nav-logo"><span class="logo-icon">🛒</span> <span class="logo-text">SmartShop</span></div>
+                <p>Your one-stop destination for smart shopping. Find the best products at amazing prices.</p>
+                <div class="footer-socials">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-youtube"></i>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div><b>Quick Links</b><br>About Us<br>Contact<br>FAQ<br>Shipping Info<br>Returns</div>
+                <div><b>Categories</b><br>Electronics<br>Fashion<br>Home & Living<br>Sports<br>Beauty</div>
+                <div><b>Newsletter</b><br>Subscribe to get special offers and updates.<br><input type="email" placeholder="Your email"><button class="btn btn-primary">Subscribe</button><br><span>support@smartshop.com<br>+1 (555) 123-4567</span></div>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 SmartShop. All rights reserved.</div>
+    </footer>
+        <section id="home-section">
+            <h1>Smart Shopping Cart</h1>
+            <p> Welcome to your smart shopping experience! Use the navigation bar to explore products, manage your cart, and more.</p>
+        </section>
+        <section id="products-section" style="display:none">
+            <h2>Products</h2>
+            <input type="text" id="search-bar" placeholder="Search products..." oninput="filterProducts()">
+            <div id="category-filters"></div>
+            <div id="products-list" class="products-list"></div>
+        </section>
+        <section id="cart-section" style="display:none">
+            <div class="budget-section">
+                <label for="budget">Set Your Budget: $</label>
+                <input type="number" id="budget" min="0" placeholder="Enter budget">
+                <button onclick="setBudget()">Set Budget</button>
+                <div id="budget-info"></div>
+            </div>
+            <div class="add-item-section">
+                <input type="text" id="item-name" placeholder="Item name">
+                <input type="number" id="item-price" min="0" placeholder="Price">
+                <input type="number" id="item-qty" min="1" value="1" placeholder="Qty">
+                <button onclick="addItem()">Add Item</button>
+            </div>
+            <div class="cart-section">
+                <h2>Shopping Cart</h2>
+                <div class="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <table id="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Subtotal</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-list"></tbody>
+                </table>
+                <div id="total"></div>
+                <div id="alert"></div>
+            </div>
+        </section>
+        <section id="billing-section" style="display:none">
+            <h2>Checkout / Billing</h2>
+            <form id="billing-form" onsubmit="submitBilling(event)">
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="payment">Payment Method:</label>
+                    <select id="payment" required>
+                        <option value="card">Credit/Debit Card</option>
+                        <option value="cod">Cash on Delivery</option>
+                    </select>
+                </div>
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div id="billing-summary"></div>
+                </div>
+                <button type="submit">Place Order</button>
+            </form>
+        </section>
+        <section id="about-section" style="display:none">
+            <h2>About</h2>
+            <p>This Smart Shopping Cart app helps you manage your shopping, track your budget, and enjoy a seamless experience. Built with HTML, CSS, and JavaScript.</p>
+        </section>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
